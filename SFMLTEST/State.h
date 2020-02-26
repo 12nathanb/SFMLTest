@@ -16,7 +16,7 @@
 
 class State
 {
-private:
+protected:
 	sf::RenderWindow* window;
 	std::vector<sf::Texture> textures;
 	bool quit;

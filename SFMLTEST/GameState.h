@@ -1,12 +1,12 @@
 #pragma once
 
 #include "State.h"
-
+#include "Player.h"
 class GameState : 
 	public State
 {
 private:
-
+	Player player;
 public:
 	GameState(sf::RenderWindow* window);
 	virtual ~GameState();
