@@ -1,6 +1,12 @@
-﻿  Game.cpp
-  GameState.cpp
-  Main.cpp
-  Player.cpp
-  Generating Code...
+﻿  Ground.cpp
+C:\Users\natha\Documents\SFMLTest\SFMLTEST\Ground.cpp(16,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\natha\Documents\SFMLTest\SFMLTEST\Ground.cpp(16,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   SFMLTEST.vcxproj -> C:\Users\natha\Documents\SFMLTest\SFMLTEST\Debug\SFMLTEST.exe

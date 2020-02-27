@@ -2,7 +2,7 @@
 
 Player::Player() : Character()
 {
-	this->shape.setSize(sf::Vector2f(100, 100));
+	this->shape.setSize(sf::Vector2f(25, 25));
 	this->shape.setPosition(sf::Vector2f(100, 100));
 	this->shape.setFillColor(sf::Color::White);
 }
@@ -11,34 +11,45 @@ Player::~Player()
 {
 }
 
-
-
-void Player::move(const float& dt, const float dir_x, const float dir_y)
+void Player::isPlayerFalling(bool temp)
 {
-	this->shape.move(dir_x * this->movementSpeed * dt, dir_y * this->movementSpeed * dt);
+	falling = temp;
 }
+
 
 void Player::update(const float& dt)
 {
+	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		this->move(dt, -10, 0);
+		this->move(sf::Vector2f(-10, 0));
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		this->move(dt, 10, 0);
+		this->move(sf::Vector2f(10, 0));
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && canJump)
 	{
-		this->move(dt, 0, -10);
+		this->move(sf::Vector2f(0, -80));
 	}
+	
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	if (falling)
 	{
-		this->move(dt, 0, 10);
+		canJump = false;
+		this->move(sf::Vector2f(0, 10));
 	}
+	else
+	{
+		canJump = true;
+	}
+}
+
+const sf::RectangleShape& Player::getShape() const
+{
+	return this->shape;
 }
 
 void Player::render(sf::RenderTarget* target)
