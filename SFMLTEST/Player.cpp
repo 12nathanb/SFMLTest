@@ -5,6 +5,7 @@ Player::Player() : Character()
 	this->shape.setSize(sf::Vector2f(25, 25));
 	this->shape.setPosition(sf::Vector2f(100, 100));
 	this->shape.setFillColor(sf::Color::White);
+	
 }
 
 Player::~Player()
@@ -19,32 +20,87 @@ void Player::isPlayerFalling(bool temp)
 
 void Player::update(const float& dt)
 {
-	
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		this->move(sf::Vector2f(-10, 0));
-	}
+	velocity.x = 0;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		this->move(sf::Vector2f(10, 0));
-	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && canJump)
+	if (sf::Joystick::isConnected(0))
 	{
-		this->move(sf::Vector2f(0, -80));
-	}
-	
+		controllerX = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
+		if (controllerX < 15 && controllerX > -15)
+		{
+			controllerX = 0;
+		}
+		
+		if (sf::Joystick::isButtonPressed(0, 0) && canJump)
+		{
+			jump();
+		}
 
-	if (falling)
-	{
-		canJump = false;
-		this->move(sf::Vector2f(0, 10));
+
+		velocity.x += (movementSpeed / 100) * controllerX;
+		//std::cout << controllerX << "\n";
 	}
 	else
 	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			velocity.x -= movementSpeed;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			velocity.x += movementSpeed;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && canJump)
+		{
+			jump();
+		}
+	}
+	
+	
+	
+	if (jumping == true)
+	{
+		velocity.y = jumpVel.y;
+	}
+
+	if (this->shape.getPosition().y < maxjumpHeight)
+	{
+		jumping = false;
+		
+	}
+
+
+	if (falling)
+	{
+		velocity.y += gravity.y;
+		canJump = false;
+		
+	}
+	else
+	{
+		
+		if (jumping == false)
+		{
+			velocity.y = 0;
+		}
+			
+		
+		
 		canJump = true;
 	}
+
+	this->move(velocity * dt);
+}
+
+void Player::jump()
+{
+	canJump = false;
+	maxjumpHeight = this->shape.getPosition().y - 20;
+	std::cout << shape.getPosition().y << "\n";
+
+	jumping = true;
 }
 
 const sf::RectangleShape& Player::getShape() const
