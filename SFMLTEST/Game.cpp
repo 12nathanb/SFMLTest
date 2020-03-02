@@ -26,7 +26,7 @@ void Game::initWindow()
 
 void Game::initStates()
 {
-	this->states.push(new GameState(this->window));
+	this->states.push(new LevelEditorState(this->window));
 }
 
 Game::Game()

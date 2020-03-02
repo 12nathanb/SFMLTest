@@ -53,14 +53,14 @@ void LevelClass::initLevel(sf::RenderWindow* window)
 			if (LevelTxt[c * r] == '0')
 			{
 				Ground groundOBJ;
-				groundOBJ.initGround(window, 50, 50, r * 50, c * 50, sf::Color::Red, "air");
+				groundOBJ.initGround(window, 50, 50, r * 50, c * 50, sf::Color::Blue, "air");
 				levelFloor.push_back(groundOBJ);
 			}
 			else if (LevelTxt[r * c] == '1')
 			{
 				
 				Ground groundOBJ;
-				groundOBJ.initGround(window, 50, 50, r * 50, c * 50, sf::Color::Green, "floor");
+				groundOBJ.initGround(window, 25, 25, r * 30 , c , sf::Color::Red, "floor");
 				levelFloor.push_back(groundOBJ);
 			}
 		}

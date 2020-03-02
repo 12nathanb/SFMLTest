@@ -17,7 +17,7 @@ private:
 	bool jumping = false;
 	float jumpHeight = 50;
 	int maxjumpHeight = 0;
-
+	int playerNum;
 	float controllerX = 0;
 	//float gravity = 2.0f;
 
@@ -28,6 +28,8 @@ public:
 	void isPlayerFalling(bool temp);
 	void move(sf::Vector2f distance) { shape.move(distance); }
 	void setGroundHeight(float h) { groundHeight = h; }
+	void setPlayerNumber(int i) { playerNum = i; }
+	int getPlayerNumber() { return playerNum; };
 
 	void jump();
 	void setPos(sf::Vector2f newPos) { shape.setPosition(newPos); }

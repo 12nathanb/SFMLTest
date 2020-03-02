@@ -1,6 +1,6 @@
 #pragma once
 #include"GameState.h"
-
+#include "LevelEditorState.h"
 class Game
 {
 private:
