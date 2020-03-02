@@ -1,6 +1,2 @@
-﻿  LevelClass.cpp
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(50,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(50,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(74,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
+﻿  GameState.cpp
   SFMLTEST.vcxproj -> C:\Users\natha\Documents\SFMLTest\SFMLTEST\Debug\SFMLTEST.exe

@@ -13,6 +13,7 @@ private:
 	bool falling = false;
 	float groundHeight = 0;
 	bool canJump = false;
+	bool doubleJ = false;
 	bool jumping = false;
 	float jumpHeight = 50;
 	int maxjumpHeight = 0;

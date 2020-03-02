@@ -30,15 +30,18 @@ void Player::update(const float& dt)
 		{
 			controllerX = 0;
 		}
+
 		
 		if (sf::Joystick::isButtonPressed(0, 0) && canJump)
 		{
 			jump();
+			
 		}
+
+		
 
 
 		velocity.x += (movementSpeed / 100) * controllerX;
-		//std::cout << controllerX << "\n";
 	}
 	else
 	{
@@ -85,8 +88,6 @@ void Player::update(const float& dt)
 		{
 			velocity.y = 0;
 		}
-			
-		
 		
 		canJump = true;
 	}

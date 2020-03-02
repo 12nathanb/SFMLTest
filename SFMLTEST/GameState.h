@@ -17,7 +17,6 @@ public:
 	
 	void endState();
 
-	//void updateCollision(const float& dt);
 	void updateKeyBinds(const float& dt);
 	void update(const float& dt);
 	void render(sf::RenderTarget* target = NULL);

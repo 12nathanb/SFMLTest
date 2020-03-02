@@ -10,7 +10,7 @@ class LevelClass
 private:
 	int floorAmount = 5;
 	std::vector<Ground> levelFloor;
-	
+	std::vector<char>LevelTxt;
 public:
 	LevelClass();
 	~LevelClass();

@@ -25,7 +25,6 @@ void GameState::updateKeyBinds(const float& dt)
 void GameState::update(const float& dt)
 {
 	this->updateKeyBinds(dt);
-	//this->updateCollision(dt);
 
 	if (level1.updateCollision(dt, player) == false)
 	{
@@ -42,8 +41,9 @@ void GameState::update(const float& dt)
 
 void GameState::render(sf::RenderTarget* target)
 {
+	this->level1.renderLevel(this->window);
+
 	this->player.render(this->window);
 
-	this->level1.renderLevel(this->window);
 	
 }
