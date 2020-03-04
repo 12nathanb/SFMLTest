@@ -1,5 +1,9 @@
 #include "GameState.h"
 
+void GameState::generateLevel()
+{
+}
+
 GameState::GameState(sf::RenderWindow* window) : State(window)
 {
 	level1.initLevel(window);
@@ -22,7 +26,7 @@ void GameState::updateKeyBinds(const float& dt)
 	this->checkForEnd();
 }
 
-void GameState::update(const float& dt)
+void GameState::update(const float& dt, sf::RenderWindow* window)
 {
 	this->updateKeyBinds(dt);
 

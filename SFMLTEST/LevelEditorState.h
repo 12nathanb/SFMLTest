@@ -14,7 +14,7 @@ public:
 	void endState();
 
 	void updateKeyBinds(const float& dt);
-	void update(const float& dt);
+	void update(const float& dt, sf::RenderWindow* window);
 	void render(sf::RenderTarget* target = NULL);
 };
 

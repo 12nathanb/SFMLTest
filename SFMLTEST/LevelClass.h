@@ -1,6 +1,7 @@
 #pragma once
 #include "Ground.h"
 #include "Player.h"
+#include "DrawInk.h"
 #include <iostream>
 #include <fstream>
 #include <iterator>
@@ -8,9 +9,10 @@
 class LevelClass
 {
 private:
-	int floorAmount = 5;
-	std::vector<Ground> levelFloor;
-	std::vector<char>LevelTxt;
+	int floorAmount = 0;
+	
+	std::vector<DrawInk> levelFloor;
+
 public:
 	LevelClass();
 	~LevelClass();

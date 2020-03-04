@@ -8,6 +8,7 @@ LevelEditorState::LevelEditorState(sf::RenderWindow* window) : State(window)
 
 LevelEditorState::~LevelEditorState()
 {
+	mouseMan.generateXML();
 }
 
 void LevelEditorState::endState()
@@ -20,11 +21,12 @@ void LevelEditorState::updateKeyBinds(const float& dt)
 	
 }
 
-void LevelEditorState::update(const float& dt)
+void LevelEditorState::update(const float& dt, sf::RenderWindow* window)
 {
 	this->updateKeyBinds(dt);
-
-	mouseMan.update(dt);
+	this->updateMousePositions();
+	std::cout << this->mousePosView.x << " " << this->mousePosView.y << "\n";
+	mouseMan.update(dt, this->mousePosView);
 
 	
 }

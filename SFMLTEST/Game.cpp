@@ -26,7 +26,7 @@ void Game::initWindow()
 
 void Game::initStates()
 {
-	this->states.push(new LevelEditorState(this->window));
+	this->states.push(new GameState(this->window));
 }
 
 Game::Game()
@@ -68,11 +68,12 @@ void Game::UpdateSFMLEvents()
 
 void Game::Update()
 {
+
 	this->UpdateSFMLEvents();
 
 	if (!this->states.empty())
 	{
-		this->states.top()->update(this->dt);
+		this->states.top()->update(this->dt, this->window);
 
 		if (this->states.top()->getQuit())
 		{

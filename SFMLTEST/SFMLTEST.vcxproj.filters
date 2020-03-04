@@ -45,14 +45,14 @@
     <ClCompile Include="LevelClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LevelEditorState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MouseDrawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DrawInk.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorState.cpp">
+      <Filter>Source Files\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,14 +77,14 @@
     <ClInclude Include="LevelClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LevelEditorState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MouseDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DrawInk.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorState.h">
+      <Filter>Header Files\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

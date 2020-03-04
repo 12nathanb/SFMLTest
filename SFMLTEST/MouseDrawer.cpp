@@ -6,31 +6,56 @@ MouseDrawer::MouseDrawer()
 
 MouseDrawer::~MouseDrawer()
 {
+
 }
 
 void MouseDrawer::init(sf::RenderWindow* window)
 {
 }
 
-void MouseDrawer::update(const float& dt)
+void MouseDrawer::update(const float& dt, sf::Vector2f posView)
 {
-	mouseTrack = sf::Mouse::getPosition();
-	std::cout << mouseTrack.x << " " << mouseTrack.x <<"\n";
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
 	{
-		sf::RectangleShape shape;
-		shape.setFillColor(sf::Color::Red);
-		shape.setSize(sf::Vector2f(25, 25));
-		shape.setPosition(sf::Vector2f(mouseTrack.x, mouseTrack.y));
-		shapeContain.push_back(shape);
+		DrawInk tile;
+		tile.init("Ink",sf::Color::Red, 25, 25, posView.x, posView.y);
+		shapeContain.push_back(tile);
 	}
+}
+
+void MouseDrawer::generateXML()
+{
+	std::vector<float> xPos;
+	std::vector<float> yPos;
+	std::vector<sf::Color> color;
+
+	for (int i = 0; i < shapeContain.size(); i++)
+	{
+		xPos.push_back(shapeContain[i].getX());
+		yPos.push_back(shapeContain[i].getY());
+		color.push_back(shapeContain[i].getColor());
+	}
+
+	std::ofstream file;
+	file.open("Level_test1.txt");
+	//file << shapeContain.size() << "\n";
+	for (int i = 0; i < shapeContain.size(); i++)
+	{
+		
+		file << xPos[i] << " " << yPos[i]  << " " << color[i].toInteger() << "\n";
+	}
+	file.close();
+
+
+	
+
 }
 
 void MouseDrawer::draw(sf::RenderTarget* target)
 {
 	for (int i = 0; i < shapeContain.size(); i++)
 	{
-		target->draw(shapeContain[i]);
+		shapeContain[i].draw(target);
 	}
 }
