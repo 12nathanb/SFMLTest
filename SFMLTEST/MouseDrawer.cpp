@@ -16,10 +16,18 @@ void MouseDrawer::init(sf::RenderWindow* window)
 void MouseDrawer::update(const float& dt, sf::Vector2f posView)
 {
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
 		DrawInk tile;
-		tile.init("Ink",sf::Color::Red, 25, 25, posView.x, posView.y);
+		tile.init("Block", 25, 25, posView.x, posView.y);
+		shapeContain.push_back(tile);
+	}
+
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && isThereASpawn == false)
+	{
+		isThereASpawn = true;
+		DrawInk tile;
+		tile.init("Spawn", 25, 25, posView.x, posView.y);
 		shapeContain.push_back(tile);
 	}
 }
@@ -28,13 +36,13 @@ void MouseDrawer::generateXML()
 {
 	std::vector<float> xPos;
 	std::vector<float> yPos;
-	std::vector<sf::Color> color;
+	std::vector<std::string> type;
 
 	for (int i = 0; i < shapeContain.size(); i++)
 	{
 		xPos.push_back(shapeContain[i].getX());
 		yPos.push_back(shapeContain[i].getY());
-		color.push_back(shapeContain[i].getColor());
+		type.push_back(shapeContain[i].getName());
 	}
 
 	std::ofstream file;
@@ -43,7 +51,7 @@ void MouseDrawer::generateXML()
 	for (int i = 0; i < shapeContain.size(); i++)
 	{
 		
-		file << xPos[i] << " " << yPos[i]  << " " << color[i].toInteger() << "\n";
+		file << xPos[i] << " " << yPos[i]  << " " << type[i] << "\n";
 	}
 	file.close();
 

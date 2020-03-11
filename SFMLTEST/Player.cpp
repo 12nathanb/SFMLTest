@@ -2,14 +2,21 @@
 
 Player::Player() : Character()
 {
-	this->shape.setSize(sf::Vector2f(25, 25));
-	this->shape.setPosition(sf::Vector2f(100, 100));
-	this->shape.setFillColor(sf::Color::White);
+	
 	
 }
 
 Player::~Player()
 {
+}
+
+void Player::init(sf::Vector2f v)
+{
+	this->shape.setSize(sf::Vector2f(25, 25));
+	this->shape.setPosition(sf::Vector2f(v.x, v.y));
+	this->shape.setFillColor(sf::Color::White);
+
+	std::cout << "Player Spawn: " << v.x << " " << v.y;
 }
 
 void Player::isPlayerFalling(bool temp)

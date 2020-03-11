@@ -13,10 +13,12 @@ private:
 public:
 	DrawInk();
 	~DrawInk();
-	void init(std::string name, sf::Color c, int sizeX, int sizeY, float mouseX, float mouseY);
+	void init(std::string name, int sizeX, int sizeY, float mouseX, float mouseY);
 	int getX() { return X; }
 	int getY() { return Y; }
 	sf::Color getColor() { return color; }
+	sf::RectangleShape getShape() { return shape; }
+	std::string getName() { return inkName; }
 
 	void draw(sf::RenderTarget* target);
 };

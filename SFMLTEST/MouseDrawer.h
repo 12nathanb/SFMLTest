@@ -8,7 +8,7 @@ class MouseDrawer
 {
 private:
 	
-	
+	bool isThereASpawn = false;
 	std::vector<DrawInk> shapeContain;
 public:
 	MouseDrawer();

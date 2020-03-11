@@ -1,8 +1,6 @@
 ﻿  LevelClass.cpp
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(69,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(35,8): warning C4101: 'y': unreferenced local variable
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(36,6): warning C4101: 'c': unreferenced local variable
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(34,8): warning C4101: 'x': unreferenced local variable
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(125,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(138,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(61,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(89,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(111,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
   SFMLTEST.vcxproj -> C:\Users\natha\Documents\SFMLTest\SFMLTEST\Debug\SFMLTEST.exe

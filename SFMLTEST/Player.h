@@ -25,6 +25,7 @@ public:
 	Player();
 	virtual ~Player();
 
+	void init(sf::Vector2f v);
 	void isPlayerFalling(bool temp);
 	void move(sf::Vector2f distance) { shape.move(distance); }
 	void setGroundHeight(float h) { groundHeight = h; }

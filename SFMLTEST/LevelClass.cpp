@@ -1,5 +1,18 @@
 #include "LevelClass.h"
 
+std::vector<std::string> LevelClass::split(std::string str, char delimiter)
+{
+	std::vector<std::string> internal;
+	std::stringstream ss(str);
+	std::string tok;
+
+	while (std::getline(ss, tok, delimiter))
+	{
+		internal.push_back(tok);
+	}
+	return internal;
+}
+
 LevelClass::LevelClass()
 {
 
@@ -13,10 +26,12 @@ void LevelClass::initLevel(sf::RenderWindow* window)
 {
 	std::ifstream inFile;
 	std::string test;
+	std::vector<datas>xV;
 	
 	
 	inFile.open("Level_test1.txt");
 	
+	std::istream& stream = inFile;
 	
 
 	if (!inFile)
@@ -29,94 +44,62 @@ void LevelClass::initLevel(sf::RenderWindow* window)
 	}
 
 	
+	if (inFile.is_open())
+	{
+		
 
+	}
 
 	
-	std::vector<float>xV;
-	std::vector<float>yV;
-	std::vector<int>cV;
+
+	while (std::getline(stream, test))
+	{
+		datas d;
+		std::vector<std::string> testV;
+		testV = split(test, ' ');
+		
+		for (int i = 2; i < testV.size(); i++)
+		{
+			//std::cout << testV[i - 2] << " " << testV[i - 1] << " " << testV[i] << " " << i << std::endl;
+
+			d.x = std::stof(testV[i - 2]);
+			d.y = std::stof(testV[i - 1]);
+			d.name = testV[i];
+
+			if (d.name == "Spawn")
+			{
+				spawnVec.x = d.x;
+				spawnVec.y = d.y;
+			}
+
+			xV.push_back(d);
+		}
+	}
+
+	
+
 
 
 	int count = 0;
 
 	std::string str;
-	while (std::getline(inFile, str) )
-	{
-		float x;
-		float y;
-		int c;
-
-		std::cout << str << "\n";
-
-		
-	}
-
-	/*while (inFile >> x >> y >> c)
-	{
-		xV.push_back(x);
-		yV.push_back(y);
-		cV.push_back(c);
-	}*/
-
-		
-
-		/*DrawInk temp;
-		temp.init("Hello", sf::Color::Red, 25, 25, x[count], y);*/
-
-		/*levelFloor.push_back(temp);*/
-
 	
 
-		
-		
+
 	for (int i = 0; i < xV.size(); i++)
 	{
-		std::cout << xV[i] << " " << yV[i] << " " << cV[i] << "\n";
+		DrawInk temp;
+
+		temp.init(xV[i].name, 25, 25, xV[i].x, xV[i].y);
+		levelFloor.push_back(temp);
+		std::cout << xV[i].x << " " << xV[i].y << " " << xV[i].name << "\n";
 	}
 
-	
 
-	/*std::string str((std::istreambuf_iterator<char>(inFile)), std::istreambuf_iterator<char>());
-	test = str;*/
 	
    
 	inFile.close();
 	
-
-	/*for (int i = 0; i < test.size(); i++)
-	{
-		if (test[i] != '\n')
-		{
-			LevelTxt.push_back(test[i]);
-		}
-	}*/
-
-	
-
-	/*int row = 10;
-	int col = 20;
-
-	for (int r = 0; r < row; r++)
-	{
-		for (int c = 0; c < col; c++)
-		{
-			std::cout << LevelTxt[r * c];
-			if (LevelTxt[c * r] == '0')
-			{
-				Ground groundOBJ;
-				groundOBJ.initGround(window, 50, 50, r * 50, c * 50, sf::Color::Blue, "air");
-				levelFloor.push_back(groundOBJ);
-			}
-			else if (LevelTxt[r * c] == '1')
-			{
-				
-				Ground groundOBJ;
-				groundOBJ.initGround(window, 25, 25, r * 30 , c , sf::Color::Red, "floor");
-				levelFloor.push_back(groundOBJ);
-			}
-		}
-		std::cout << "\n";
-	}*/
 }
 
 void LevelClass::updateLevel(const float& dt)
@@ -127,10 +110,10 @@ bool LevelClass::updateCollision(const float& dt, Player& player)
 {
 	for (int i = 0; i < levelFloor.size(); i++)
 	{
-		/*if (player.getShape().getGlobalBounds().intersects(this->levelFloor[i].getShape().getGlobalBounds()) && this->levelFloor[i].getTag() == "floor")
+		if (player.getShape().getGlobalBounds().intersects(this->levelFloor[i].getShape().getGlobalBounds()) && this->levelFloor[i].getName() == "Block")
 		{
 			return true;
-		}*/
+		}
 	}
 
 	return false;
@@ -140,6 +123,6 @@ void LevelClass::renderLevel(sf::RenderTarget* target)
 {
 	for (int i = 0; i < levelFloor.size(); i++)
 	{
-		//levelFloor[i].render(target);
+		levelFloor[i].draw(target);
 	}
 }

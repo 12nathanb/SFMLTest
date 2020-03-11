@@ -7,6 +7,7 @@ void GameState::generateLevel()
 GameState::GameState(sf::RenderWindow* window) : State(window)
 {
 	level1.initLevel(window);
+	player.init(level1.getSpawn());
 }
 
 GameState::~GameState()
