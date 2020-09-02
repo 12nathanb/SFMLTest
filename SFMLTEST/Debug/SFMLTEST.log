@@ -1,6 +1,57 @@
-﻿  LevelClass.cpp
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(61,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(89,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(111,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\SFMLTest\SFMLTEST\LevelClass.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
-  SFMLTEST.vcxproj -> C:\Users\natha\Documents\SFMLTest\SFMLTEST\Debug\SFMLTEST.exe
+﻿  Character.cpp
+  DrawInk.cpp
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\DrawInk.cpp(14,6): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\DrawInk.cpp(15,6): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\DrawInk.cpp(27,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\DrawInk.cpp(27,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Game.cpp
+  GameState.cpp
+  Ground.cpp
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\Ground.cpp(16,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\Ground.cpp(16,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  LevelClass.cpp
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\LevelClass.cpp(61,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\LevelClass.cpp(89,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\LevelClass.cpp(111,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\LevelClass.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
+  LevelEditorState.cpp
+  Main.cpp
+  MouseDrawer.cpp
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\MouseDrawer.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\MouseDrawer.cpp(43,38): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\MouseDrawer.cpp(44,38): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\MouseDrawer.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\MouseDrawer.cpp(65,20): warning C4018: '<': signed/unsigned mismatch
+  Player.cpp
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\Player.cpp(108,46): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  State.cpp
+  Generating Code...
+  SFMLTEST.vcxproj -> C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\Debug\SFMLTEST.exe

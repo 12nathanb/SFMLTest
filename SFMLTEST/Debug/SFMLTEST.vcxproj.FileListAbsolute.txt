@@ -1,0 +1,2 @@
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\Debug\SFMLTEST.exe
+C:\Users\natha\Desktop\SFMLTest-master\SFMLTEST\Debug\SFMLTEST.pdb
